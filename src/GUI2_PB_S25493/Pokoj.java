@@ -40,5 +40,7 @@ class Trojka extends Pokoj{
         super(type, howLong, breakfast);
         this.name = "trojka";
     }
+
+
 }
 
