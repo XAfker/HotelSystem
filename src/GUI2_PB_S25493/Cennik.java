@@ -32,4 +32,13 @@ class Cena{
     public String getName(){
         return this.name;
     }
+
+    public String getType(){
+        return this.type;
+    }
+
+    @Override
+    public String toString(){
+        return (this.name +", typ: " +this.type +", cena: " +this.price);
+    }
 }

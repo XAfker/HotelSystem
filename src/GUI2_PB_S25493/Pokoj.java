@@ -5,6 +5,7 @@ public abstract class Pokoj {
     protected String name;
     protected String type;
     protected int howLong;
+    protected int price;
     protected boolean breakfast;
 
 
@@ -13,6 +14,25 @@ public abstract class Pokoj {
         this.howLong = howLong;
         this.breakfast = breakfast;
     }
+
+    @Override
+    public String toString(){
+        String res = (this.name +", typ: " +this.type +", na ile: " +this.howLong);
+        if(breakfast)
+            res += (", sniadanie? tak");
+        else
+            res += (", sniadanie? nie");
+
+        if(this.price != 0)
+        res += (", cena: " +this.price);
+
+        return res;
+    }
+
+    public void setPrice(int price){
+        this.price = price;
+    }
+
 }
 
 class Jedynka extends Pokoj{
@@ -40,7 +60,5 @@ class Trojka extends Pokoj{
         super(type, howLong, breakfast);
         this.name = "trojka";
     }
-
-
 }
 

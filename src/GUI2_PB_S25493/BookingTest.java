@@ -4,8 +4,13 @@ public class BookingTest {
 
     // cena pokoi (o podanym typie, nie licząc śniadania) z koszyka
     static int cena(Koszyk k, String typ) {
-        /*<- tu trzeba wpisać ciało metody */
-        return 0;
+        int price = 0;
+        for (int i = 0; i < k.pokoje.size(); i++) {
+            if(k.pokoje.get(i).type.equals(typ)){
+                price += (k.pokoje.get(i).price * k.pokoje.get(i).howLong);
+            }
+        }
+        return price;
     }
 
     public static void main(String[] args) {
